@@ -31,7 +31,7 @@ describe('configFromJobInput()', function () {
 
     const defaultInputs = {
         name: 'Benchmark',
-        tool: 'cargo',
+        tool: 'customSmallerIsBetter',
         'output-file-path': 'out.txt',
         'gh-pages-branch': 'gh-pages',
         'benchmark-data-dir-path': '.',
@@ -190,7 +190,7 @@ describe('configFromJobInput()', function () {
 
     const defaultExpected: ExpectedResult = {
         name: 'Benchmark',
-        tool: 'cargo',
+        tool: 'customSmallerIsBetter',
         ghPagesBranch: 'gh-pages',
         ghRepository: undefined,
         autoPush: false,
@@ -326,7 +326,7 @@ describe('configFromJobInput()', function () {
 
         const config = await configFromJobInput();
         A.equal(config.name, 'Benchmark');
-        A.equal(config.tool, 'cargo');
+        A.equal(config.tool, 'customSmallerIsBetter');
         A.ok(path.isAbsolute(config.outputFilePath), config.outputFilePath);
         A.ok(config.outputFilePath.endsWith('out.txt'), config.outputFilePath);
         A.ok(path.isAbsolute(config.benchmarkDataDirPath), config.benchmarkDataDirPath);

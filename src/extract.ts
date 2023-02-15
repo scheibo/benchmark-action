@@ -42,18 +42,6 @@ export interface Benchmark {
     benches: BenchmarkResult[];
 }
 
-function getHumanReadableUnitValue(seconds: number): [number, string] {
-    if (seconds < 1.0e-6) {
-        return [seconds * 1e9, 'nsec'];
-    } else if (seconds < 1.0e-3) {
-        return [seconds * 1e6, 'usec'];
-    } else if (seconds < 1.0) {
-        return [seconds * 1e3, 'msec'];
-    } else {
-        return [seconds, 'sec'];
-    }
-}
-
 function getCommitFromPullRequestPayload(pr: PullRequest): Commit {
     // On pull_request hook, head_commit is not available
     const id: string = pr.head.sha;

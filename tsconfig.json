@@ -22,7 +22,7 @@
   "include": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.build.json"
     },
     {
       "path": "./tsconfig.spec.json"

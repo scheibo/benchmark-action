@@ -201,7 +201,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
         const dataJson = 'data.json';
         const defaultCfg: Config = {
             name: 'Test benchmark',
-            tool: 'cargo',
+            tool: 'customSmallerIsBetter',
             outputFilePath: 'dummy', // Should not affect
             ghPagesBranch: 'dummy', // Should not affect
             ghRepository: undefined,
@@ -258,7 +258,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -267,7 +267,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -279,7 +279,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
             },
@@ -294,7 +294,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 10)],
                             },
                         ],
@@ -303,7 +303,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
             },
@@ -318,7 +318,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'pytest',
+                                tool: 'customBiggerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -326,7 +326,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 10)],
                             },
                         ],
@@ -335,7 +335,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'pytest',
+                    tool: 'customBiggerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
             },
@@ -350,7 +350,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100), bench('bench_fib_20', 10000)],
                             },
                         ],
@@ -359,7 +359,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210), bench('bench_fib_20', 25000)], // Exceeds 2.0 threshold
                 },
                 error: [
@@ -389,13 +389,13 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('old commit id'),
                                 date: lastUpdate - 2000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 50), bench('bench_fib_20', 5000)],
                             },
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100), bench('bench_fib_20', 10000)],
                             },
                         ],
@@ -404,7 +404,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210), bench('bench_fib_20', 25000)], // Exceeds 2.0 threshold
                 },
                 error: [
@@ -434,13 +434,13 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('old commit id'),
                                 date: lastUpdate - 2000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 50), bench('bench_fib_20', 5000)],
                             },
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100), bench('bench_fib_20', 10000)],
                             },
                         ],
@@ -449,7 +449,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210), bench('bench_fib_20', 25000)], // Exceeds 2.0 threshold
                 },
                 error: [
@@ -479,7 +479,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'benchmarkjs',
+                                tool: 'customBiggerIsBetter',
                                 benches: [bench('benchFib10', 100, '+-20', 'ops/sec')],
                             },
                         ],
@@ -488,7 +488,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'benchmarkjs',
+                    tool: 'customBiggerIsBetter',
                     benches: [bench('benchFib10', 20, '+-20', 'ops/sec')], // ops/sec so bigger is better
                 },
                 error: [
@@ -517,7 +517,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -526,7 +526,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: [
@@ -555,7 +555,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'googlecpp',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -564,7 +564,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'googlecpp',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: [
@@ -591,7 +591,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -600,7 +600,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 commitComment: 'Comment was generated at https://dummy-comment-url',
@@ -616,7 +616,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -625,7 +625,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: undefined,
@@ -642,7 +642,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('another_bench', 100)],
                             },
                         ],
@@ -651,7 +651,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: undefined,
@@ -668,7 +668,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'cargo',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -677,7 +677,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: ["'comment-on-alert' input is set but 'github-token' input is not set"],
@@ -694,7 +694,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100), bench('bench_fib_20', 10000)],
                             },
                         ],
@@ -703,7 +703,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210), bench('bench_fib_20', 25000)], // Exceeds 2.0 threshold
                 },
                 // Though first item is truncated due to maxItemsInChart, alert still can be raised since previous data
@@ -735,7 +735,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'benchmarkjs',
+                                tool: 'customBiggerIsBetter',
                                 benches: [bench('benchFib10', 100, '+-20', 'ops/sec')],
                             },
                         ],
@@ -744,7 +744,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'benchmarkjs',
+                    tool: 'customBiggerIsBetter',
                     benches: [bench('benchFib10', 100, '+-20', 'ops/sec')],
                 },
                 error: [
@@ -773,7 +773,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -782,7 +782,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 350)], // Exceeds 3.0 failure threshold
                 },
                 error: [
@@ -813,7 +813,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             {
                                 commit: commit('prev commit id'),
                                 date: lastUpdate - 1000,
-                                tool: 'go',
+                                tool: 'customSmallerIsBetter',
                                 benches: [bench('bench_fib_10', 100)],
                             },
                         ],
@@ -822,7 +822,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'go',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 error: undefined,
@@ -992,7 +992,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
 
         const defaultCfg: Config = {
             name: 'Test benchmark',
-            tool: 'cargo',
+            tool: 'customSmallerIsBetter',
             outputFilePath: 'dummy', // Should not affect
             ghPagesBranch: 'gh-pages',
             ghRepository: undefined,
@@ -1034,7 +1034,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 fetch ? ['pull', [token, 'gh-pages']] : undefined,
                 ['cmd', [[], 'add', path.join(dir, 'data.js')]],
                 addIndexHtml ? ['cmd', [[], 'add', path.join(dir, 'index.html')]] : undefined,
-                ['cmd', [[], 'commit', '-m', 'add Test benchmark (cargo) benchmark result for current commit id']],
+                ['cmd', [[], 'commit', '-m', 'add Test benchmark (customSmallerIsBetter) benchmark result for current commit id']],
                 autoPush ? ['push', [token, undefined, 'gh-pages', []]] : undefined,
                 ['cmd', [[], 'checkout', '-']], // Return from gh-pages
             ];
@@ -1057,7 +1057,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1069,7 +1069,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1085,7 +1085,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1120,7 +1120,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             ['--work-tree=./benchmark-data-repository', '--git-dir=./benchmark-data-repository/.git'],
                             'commit',
                             '-m',
-                            'add Test benchmark (cargo) benchmark result for current commit id',
+                            'add Test benchmark (customSmallerIsBetter) benchmark result for current commit id',
                         ],
                     ],
                     [
@@ -1144,7 +1144,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1179,7 +1179,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                             ['--work-tree=./benchmark-data-repository', '--git-dir=./benchmark-data-repository/.git'],
                             'commit',
                             '-m',
-                            'add Test benchmark (cargo) benchmark result for current commit id',
+                            'add Test benchmark (customSmallerIsBetter) benchmark result for current commit id',
                         ],
                     ],
                     [
@@ -1200,7 +1200,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('other_bench_foo', 100)],
                 },
                 gitServerUrl: serverUrl,
@@ -1212,7 +1212,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 100)],
                 },
                 gitServerUrl: serverUrl,
@@ -1224,7 +1224,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1236,7 +1236,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1248,7 +1248,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1261,7 +1261,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 135)],
                 },
                 gitServerUrl: serverUrl,
@@ -1273,7 +1273,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold
                 },
                 gitServerUrl: serverUrl,
@@ -1303,7 +1303,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 added: {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 210)], // Exceeds 2.0 threshold but not exceed 3.0 threshold
                 },
                 gitServerUrl: serverUrl,
@@ -1436,7 +1436,7 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 const added: Benchmark = {
                     commit: commit('current commit id'),
                     date: lastUpdate,
-                    tool: 'cargo',
+                    tool: 'customSmallerIsBetter',
                     benches: [bench('bench_fib_10', 110)],
                 };
 
