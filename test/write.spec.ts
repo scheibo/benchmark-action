@@ -1034,7 +1034,15 @@ describe.each(['https://github.com', 'https://github.enterprise.corp'])('writeBe
                 fetch ? ['pull', [token, 'gh-pages']] : undefined,
                 ['cmd', [[], 'add', path.join(dir, 'data.js')]],
                 addIndexHtml ? ['cmd', [[], 'add', path.join(dir, 'index.html')]] : undefined,
-                ['cmd', [[], 'commit', '-m', 'add Test benchmark (customSmallerIsBetter) benchmark result for current commit id']],
+                [
+                    'cmd',
+                    [
+                        [],
+                        'commit',
+                        '-m',
+                        'add Test benchmark (customSmallerIsBetter) benchmark result for current commit id',
+                    ],
+                ],
                 autoPush ? ['push', [token, undefined, 'gh-pages', []]] : undefined,
                 ['cmd', [[], 'checkout', '-']], // Return from gh-pages
             ];

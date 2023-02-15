@@ -41,8 +41,8 @@ function validateDataJson(data: DataJson) {
     }
 
     const serverUrl = getServerUrl(repoUrl);
-    const repoUrlMatcher = new RegExp(`^${serverUrl}/[^/]+/github-action-benchmark$`);
-    const commitUrlMatcher = new RegExp(`^${serverUrl}/[^/]+/github-action-benchmark/commit/`);
+    const repoUrlMatcher = new RegExp(`^${serverUrl}/[^/]+/benchmark-action$`);
+    const commitUrlMatcher = new RegExp(`^${serverUrl}/[^/]+/benchmark-action/commit/`);
     if (!repoUrlMatcher.test(repoUrl)) {
         throw new Error(`repoUrl is not correct: ${repoUrl}`);
     }
