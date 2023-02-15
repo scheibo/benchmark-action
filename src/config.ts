@@ -26,20 +26,7 @@ export interface Config {
     maxItemsInChart: number | null;
 }
 
-export const VALID_TOOLS = [
-    'cargo',
-    'go',
-    'benchmarkjs',
-    'benchmarkluau',
-    'pytest',
-    'googlecpp',
-    'catch2',
-    'julia',
-    'jmh',
-    'benchmarkdotnet',
-    'customBiggerIsBetter',
-    'customSmallerIsBetter',
-] as const;
+export const VALID_TOOLS = ['customBiggerIsBetter', 'customSmallerIsBetter'] as const;
 const RE_UINT = /^\d+$/;
 
 function validateToolType(tool: string): asserts tool is ToolType {
