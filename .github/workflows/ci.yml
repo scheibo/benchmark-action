@@ -7,8 +7,6 @@ on:
     branches:
       - master
 
-permissions: write-all
-
 jobs:
   unit-tests:
     name: Run unit tests
@@ -42,6 +40,12 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm run build
+      - name: Save previous data.js
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages
+          cp ./dev/bench/data.js before_data.js
+          git checkout -
       - name: Run benchmark
         run: cd example && node bench.js | tee output.json
       - name: Store benchmark result
@@ -51,8 +55,7 @@ jobs:
           tool: 'customSmallerIsBetter'
           output-file-path: example/output.json
           fail-on-alert: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: true
+      - run: node ./dist/scripts/ci_validate_modification.js before_data.js 'Example Benchmark'
 
   only-alert-with-cache:
     name: Run alert check with actions/cache
